@@ -28,6 +28,5 @@ def open_manager_page(open_xyz_bank):
     #if login_page.is_url_login():
     login_page.click_bank_manager_login()
     manager_page = ManagerPage(login_page.driver)
-    sleep(10)
     assert manager_page.is_url_manager(), 'Página de Manager não encontrada!'
     yield login_page, manager_page

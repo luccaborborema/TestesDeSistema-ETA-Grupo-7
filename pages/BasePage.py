@@ -2,6 +2,9 @@ from time import sleep
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions
+from selenium.common.exceptions import TimeoutException
 
 class BasePage:
     def __init__(self, driver, browser=None):
@@ -20,8 +23,13 @@ class BasePage:
                 raise Exception('Browser não suportado!')
 
     def is_url(self, url):
-        print(self.driver.current_url)
-        return self.driver.current_url == url
+        try:
+            WebDriverWait(self.driver, 10).until(
+                expected_conditions.url_matches(url)
+            )
+            return True
+        except TimeoutException:
+            return False
 
     def close(self):
         sleep(1)
