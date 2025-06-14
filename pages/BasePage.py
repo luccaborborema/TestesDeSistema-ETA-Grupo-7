@@ -20,8 +20,9 @@ class BasePage:
                 raise Exception('Browser não suportado!')
 
     def is_url(self, url):
+        print(self.driver.current_url)
         return self.driver.current_url == url
 
     def close(self):
-        sleep(2)
+        sleep(1)
         self.driver.quit()

@@ -1,3 +1,5 @@
+from time import sleep
+
 import pytest
 from pages.LoginPage import LoginPage
 from pages.ManagerPage import ManagerPage
@@ -23,8 +25,9 @@ def open_xyz_bank(request):
 @pytest.fixture
 def open_manager_page(open_xyz_bank):
     login_page = open_xyz_bank
-    if login_page.is_url_login():
-        login_page.click_bank_manager_login()
+    #if login_page.is_url_login():
+    login_page.click_bank_manager_login()
     manager_page = ManagerPage(login_page.driver)
+    sleep(10)
     assert manager_page.is_url_manager(), 'Página de Manager não encontrada!'
     yield login_page, manager_page
