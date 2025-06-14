@@ -32,5 +32,5 @@ class BasePage:
             return False
 
     def close(self):
-        sleep(1)
+        sleep(2)
         self.driver.quit()
