@@ -6,6 +6,7 @@ class ManagerPage(BasePage):
     btn_add_customer = (By.CSS_SELECTOR, '[ng-class="btnClass1"]')
     btn_open_account = (By.CSS_SELECTOR, '[ng-class="btnClass2"]')
     btn_customers = (By.CSS_SELECTOR, '[ng-class="btnClass3"]')
+    btn_home = (By.CSS_SELECTOR, '.home')
 
     def __init__(self, driver):
         super().__init__(driver=driver)
@@ -21,3 +22,6 @@ class ManagerPage(BasePage):
 
     def click_customers(self):
         self.driver.find_element(*self.btn_customers).click()
+
+    def click_home(self):
+        self.driver.find_element(*self.btn_home).click()
