@@ -26,7 +26,6 @@ class AddCustomers(BasePage):
         self.driver.find_element(*self.input_first_name).send_keys(first_name)
         self.driver.find_element(*self.input_last_name).send_keys(last_name)
         self.driver.find_element(*self.input_post_code).send_keys(post_code)
-        sleep(1)
         self.click_add_customer()
 
     def get_alert_text(self):
