@@ -17,7 +17,6 @@ class CustomersList(BasePage):
 
     def get_search_len(self):
         rows = self.driver.find_elements(By.CSS_SELECTOR, "tbody tr")
-        print(f'len(rows): {len(rows)}')
         return len(rows)
 
     def validate_account_number(self, account_number):

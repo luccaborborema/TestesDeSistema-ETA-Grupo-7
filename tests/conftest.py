@@ -32,6 +32,18 @@ def open_manager_page(open_xyz_bank):
     yield login_page, manager_page
 
 @pytest.fixture
+def create_customer_without_account(open_manager_page):
+    login_page, manager_page = open_manager_page
+
+    manager_page.click_add_customer()
+    add_customer_page = AddCustomers(manager_page.driver)
+    assert add_customer_page.is_url_add_customer(), 'Página Add Customer não encontrada!'
+    add_customer_page.add_customer(first_name='Amelie', last_name="Silva")
+    assert 'Customer added successfully with customer id :' in add_customer_page.get_alert_text(), 'Texto inesperado no alerta'
+    add_customer_page.close_alert()
+    yield login_page, manager_page
+
+@pytest.fixture
 def create_customer_with_dollar(open_manager_page):
     login_page, manager_page = open_manager_page
 

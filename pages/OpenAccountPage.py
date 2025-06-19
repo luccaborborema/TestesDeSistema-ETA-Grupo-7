@@ -19,14 +19,18 @@ class OpenAccountPage(BasePage):
         return self.is_url(self.url_open_account)
 
     def select_customer(self, customer):
+        WebDriverWait(self.driver, 10).until(
+            expected_conditions.visibility_of_element_located(self.customer_select)
+        )
         select_element = self.driver.find_element(*self.customer_select)
-        select = Select(select_element)
-        select.select_by_visible_text(customer)
+        Select(select_element).select_by_visible_text(customer)
 
     def select_currency(self, currency):
+        WebDriverWait(self.driver, 10).until(
+            expected_conditions.visibility_of_element_located(self.currency_select)
+        )
         select_element = self.driver.find_element(*self.currency_select)
-        select = Select(select_element)
-        select.select_by_visible_text(currency)
+        Select(select_element).select_by_visible_text(currency)
 
     def click_process(self):
         self.driver.find_element(*self.btn_process).click()
