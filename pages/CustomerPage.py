@@ -1,8 +1,6 @@
 from pages.BasePage import BasePage
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions
 
 class CustomerPage(BasePage):
     url_customer = 'https://www.globalsqa.com/angularJs-protractor/BankingProject/#/customer'
@@ -16,10 +14,7 @@ class CustomerPage(BasePage):
         return self.is_url(self.url_customer)
 
     def select_your_name(self, name):
-        WebDriverWait(self.driver, 10).until(
-            expected_conditions.visibility_of_element_located(self.name_select)
-        )
-        select_element = self.driver.find_element(*self.name_select)
+        select_element = self.wait_for_element(self.name_select)
         Select(select_element).select_by_visible_text(name)
 
     def validate_login_is_visible(self):

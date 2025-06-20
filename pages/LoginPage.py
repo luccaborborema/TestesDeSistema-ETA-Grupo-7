@@ -1,7 +1,5 @@
 from selenium.webdriver.common.by import By
 from pages.BasePage import BasePage
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions
 
 class LoginPage(BasePage):
     url_login = 'https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login'
@@ -17,9 +15,7 @@ class LoginPage(BasePage):
         return self.is_url(self.url_login)
 
     def get_login_buttons(self):
-        WebDriverWait(self.driver, 5).until(
-            expected_conditions.presence_of_element_located(self.btn_selector)
-        )
+        self.wait_for_element(self.btn_selector)
         return self.driver.find_elements(*self.btn_selector)
 
     def click_customer_login(self):

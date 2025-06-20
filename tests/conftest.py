@@ -64,7 +64,7 @@ def create_customer_with_dollar(open_manager_page):
     assert 'Account created successfully with account Number :' in open_account_page.get_alert_text(), 'Texto inesperado no alerta'
     open_account_page.close_alert()
 
-    yield manager_page
+    yield login_page, manager_page
 
 
 
