@@ -1,5 +1,3 @@
-from time import sleep
-
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
@@ -33,3 +31,8 @@ class BasePage:
 
     def close(self):
         self.driver.quit()
+
+    def wait_for_element(self, locator, timeout=10):
+        return WebDriverWait(self.driver, timeout).until(
+            expected_conditions.visibility_of_element_located(locator)
+        )

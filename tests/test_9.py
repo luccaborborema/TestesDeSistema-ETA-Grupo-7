@@ -3,7 +3,7 @@ from pages.CustomersListPage import CustomersList
 
 class Test9:
     def test_add_new_account_with_same_currency(self, create_customer_with_dollar):
-        manager_page = create_customer_with_dollar
+        login_page, manager_page = create_customer_with_dollar
 
         manager_page.click_open_account()
         open_account_page = OpenAccountPage(manager_page.driver)

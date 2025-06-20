@@ -1,7 +1,4 @@
-from time import sleep
-
 from pages.CustomerPage import CustomerPage
-from pages.LoginPage import LoginPage
 from pages.AccountPage import AccountPage
 
 class Test9:

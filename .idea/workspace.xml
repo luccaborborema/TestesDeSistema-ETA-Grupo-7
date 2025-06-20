@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="979ea62e-b0a4-423c-b4f9-ebcbc530bb0c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/tests/test_5.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_5.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/AccountPage.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/AccountPage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/conftest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_12.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_12.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_4.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_4.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_9.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_9.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,9 +26,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2yVWSRJ1ruCEMZYcEZXdgOs6dja" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -36,11 +40,14 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python tests.Python tests in test_12.py.executor": "Run",
+    "Python tests.Python tests in test_4.py.executor": "Run",
     "Python tests.Python tests in test_5.py.executor": "Run",
+    "Python tests.Python tests in test_9.py.executor": "Run",
     "Python.conftest.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "lucca",
     "last_opened_file_path": "/Users/lsb/PycharmProjects/TesteDeSistema-ETA-Grupo-7/Pages",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
