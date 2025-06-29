@@ -1,7 +1,7 @@
 from pages.CustomerPage import CustomerPage
 from pages.AccountPage import AccountPage
 
-class Test9:
+class Test12:
     def test_login_with_no_account(self, create_customer_without_account):
         login_page, manager_page = create_customer_without_account
 
