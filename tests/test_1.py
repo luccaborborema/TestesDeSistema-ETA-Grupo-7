@@ -20,3 +20,4 @@ class Test1:
         assert account_page.get_customer_name() == 'Amelie Silva', 'Nome não bate com nome do cliente'
         account_page.make_deposit(1000)
         assert account_page.get_deposit_message() == 'Deposit Successful', 'Erro no depósito'
+        assert account_page.get_balance() == 1000, 'Saldo inválido'
