@@ -46,7 +46,7 @@ class AccountPage(BasePage):
         amount_element.send_keys(value)
         self.click_confirm()
 
-     def make_withdraw(self, value):
+    def make_withdraw(self, value):
         self.click_withdraw_menu()
         amount_element = self.wait_for_element(self.input_amount)
         amount_element.send_keys(value)
