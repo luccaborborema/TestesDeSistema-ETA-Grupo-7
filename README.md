@@ -11,36 +11,33 @@ O site simula funcionalidades de um banco digital, como login de cliente, adicio
 ## 📂 Estrutura do Projeto
 
 banking-automation/
-│
-├── tests/
-│ ├── conftest.py
-│ ├── pytest.ini
-│ ├── test_1.py
-│ ├── test_2.py
-│ ├── test_3.py
-│ ├── test_4.py
-│ ├── test_5.py
-│ ├── test_6.py
-│ ├── test_7.py
-│ ├── test_8.py
-│ ├── test_9.py
-│ ├── test_10.py
-│ ├── test_11.py
-│ └── test_12.py
-│
-├── pages/
-│ ├── AccountPage.py
-│ ├── AddCustomerPage.py
-│ ├── BasePage.py
-│ ├── CustomerPage.py
-│ ├── CustomersListPage.py
-│ ├── LoginPage.py
-│ ├── ManagerPage.py
-│ ├── OpenAccountPage.py
-│ ├── TransactionsPage.py
-│ └── __init__.py
-│
-└── README.md
+tests/
+✅conftest.py
+✅pytest.ini
+✅test_1.py
+✅test_2.py
+✅test_3.py
+✅test_4.py
+✅test_5.py
+✅test_6.py
+✅test_7.py
+✅test_8.py
+✅test_9.py
+✅test_10.py
+✅test_11.py
+✅test_12.py
+
+pages/
+✅AccountPage.py
+✅AddCustomerPage.py
+✅BasePage.py
+✅CustomerPage.py
+✅CustomersListPage.py
+✅LoginPage.py
+✅ManagerPage.py
+✅OpenAccountPage.py
+✅TransactionsPage.py
+✅__init__.py
 
 
 ## ⚙️ Pré-requisitos
