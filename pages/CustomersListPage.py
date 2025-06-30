@@ -6,6 +6,7 @@ class CustomersList(BasePage):
     input_search = (By.CSS_SELECTOR, '[ng-model="searchCustomer"]')
     accounts_column = (By.CSS_SELECTOR, 'tbody tr:nth-of-type(1) td:nth-of-type(4)')
     scroll_container = (By.CSS_SELECTOR, "div.marTop[style*='overflow: scroll']")
+    delete_btn = (By.CSS_SELECTOR, '[ng-click="deleteCust(cust)"]')
 
 
 
@@ -18,6 +19,9 @@ class CustomersList(BasePage):
 
     def type_customer(self, customer):
         self.driver.find_element(*self.input_search).send_keys(customer)
+
+    def delete(self):
+        self.driver.find_element(*self.delete_btn).click()
 
     def get_search_len(self):
         rows = self.driver.find_elements(By.CSS_SELECTOR, "tbody tr")
