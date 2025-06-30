@@ -8,6 +8,7 @@ class BasePage:
     def __init__(self, driver, browser=None):
         if driver:
             self.driver = driver
+            self.driver.implicitly_wait(5)
         else:
             if browser == 'chrome':
                 options = Options()

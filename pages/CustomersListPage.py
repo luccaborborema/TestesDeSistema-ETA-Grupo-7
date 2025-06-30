@@ -5,6 +5,10 @@ class CustomersList(BasePage):
     url_customers_list = 'https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/list'
     input_search = (By.CSS_SELECTOR, '[ng-model="searchCustomer"]')
     accounts_column = (By.CSS_SELECTOR, 'tbody tr:nth-of-type(1) td:nth-of-type(4)')
+    scroll_container = (By.CSS_SELECTOR, "div.marTop[style*='overflow: scroll']")
+
+
+
 
     def __init__(self, driver):
         super().__init__(driver=driver)
@@ -27,3 +31,16 @@ class CustomersList(BasePage):
         if account_number in span_texts:
             flag = True
         return flag
+
+    def has_scroll(self):
+
+        scroll_container = self.driver.find_element(*self.scroll_container)
+
+        # Check if the element has vertical scroll
+        has_scroll = self.driver.execute_script(
+            "return arguments[0].scrollHeight > arguments[0].clientHeight;", scroll_container
+        )
+
+        print("Customer table has vertical scroll:", has_scroll)
+
+        return has_scroll
