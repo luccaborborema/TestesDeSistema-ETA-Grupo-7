@@ -23,3 +23,4 @@ class Test3:
         account_page.click_withdraw_menu()
         account_page.make_withdraw(1200)
         assert account_page.get_withdraw_message() == 'Transaction Failed. You can not withdraw amount more than the balance.', 'Erro na transaction'
+        assert account_page.get_balance() == 1000, 'Saldo inválido'
