@@ -8,9 +8,10 @@ class AccountPage(BasePage):
     btn_transactions_menu = (By.CSS_SELECTOR, '[ng-class="btnClass1"]')
     btn_deposit_menu = (By.CSS_SELECTOR, '[ng-class="btnClass2"]')
     btn_withdraw_menu = (By.CSS_SELECTOR, '[ng-class="btnClass3"]')
-    btn_confirm = (By.CSS_SELECTOR, "button[type='submit']")
+    btn_confirm_deposit = (By.XPATH,"//button[contains(@class, 'btn') and contains(@class, 'btn-default') and text()='Deposit']")
+    btn_confirm_withdraw = (By.XPATH,"//button[contains(@class, 'btn') and contains(@class, 'btn-default') and text()='Withdraw']")
     input_amount = (By.CSS_SELECTOR, '[ng-model="amount"]')
-    deposit_message = (By.CSS_SELECTOR, 'span[ng-show="message"]')
+    message = (By.CSS_SELECTOR, 'span[ng-show="message"]')
     account_info = (By.CSS_SELECTOR, "div.center strong.ng-binding")
 
 
@@ -33,32 +34,39 @@ class AccountPage(BasePage):
 
     def click_deposit_menu(self):
         self.driver.find_element(*self.btn_deposit_menu).click()
+        form_group = (By.XPATH,"//label[normalize-space(text())='Amount to be Deposited :']/following-sibling::input")
+        self.wait_for_element(form_group)
 
     def click_withdraw_menu(self):
         self.driver.find_element(*self.btn_withdraw_menu).click()
+        form_group = (By.XPATH,"//label[normalize-space(text())='Amount to be Withdrawn :']/following-sibling::input")
+        self.wait_for_element(form_group)
 
-    def click_confirm(self):
-        self.driver.find_element(*self.btn_confirm).click()
+    def click_deposit_confirm(self):
+        self.wait_for_element(self.btn_confirm_deposit).click()
+
+    def click_withdraw_confirm(self):
+        self.wait_for_element(self.btn_confirm_withdraw).click()
 
     def make_deposit(self, value):
         self.click_deposit_menu()
         amount_element = self.wait_for_element(self.input_amount)
         amount_element.send_keys(value)
-        self.click_confirm()
+        self.click_deposit_confirm()
 
     def make_withdraw(self, value):
         self.click_withdraw_menu()
         amount_element = self.wait_for_element(self.input_amount)
         amount_element.send_keys(value)
-        self.click_confirm()
+        self.click_withdraw_confirm()
 
     def get_deposit_message(self):
-        welcome_message_element = self.wait_for_element(self.deposit_message)
-        return welcome_message_element.text if welcome_message_element.is_displayed() else None
+        message_element = self.wait_for_element(self.message)
+        return self.driver.find_element(*self.message).text if message_element.is_displayed() else None
 
     def get_withdraw_message(self):
-        welcome_message_element = self.wait_for_element(self.withdraw_message)
-        return welcome_message_element.text if welcome_message_element.is_displayed() else None
+        message_element = self.wait_for_element(self.message)
+        return self.driver.find_element(*self.message).text if message_element.is_displayed() else None
 
     def get_balance(self):
         self.wait_for_element((By.CSS_SELECTOR, "div.center"))
